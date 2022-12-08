@@ -5,7 +5,7 @@ var article = [
     author: {
       name: 'Sharleen Joynt',
       email: 'sharleen@alltheprettypandas.com',
-      age: '35',
+      age: 35,
     },
     tags: ['js', 'mongo'],
   },
@@ -15,7 +15,7 @@ var article = [
     author: {
       name: 'Debbie Radpith',
       email: 'debbieBlathering@gmail.com',
-      age: '41',
+      age: 41,
     },
     tags: ['js', 'mongo'],
   },
@@ -25,7 +25,7 @@ var article = [
     author: {
       name: 'M.J Rose',
       email: 'rose@gmail.com',
-      age: '62',
+      age: 62,
     },
     tags: ['js', 'mongo'],
   },
