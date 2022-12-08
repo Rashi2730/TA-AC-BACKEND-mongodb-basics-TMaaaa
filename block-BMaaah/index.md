@@ -2,8 +2,8 @@ writeCode
 
 Write code to execute below expressions.
 
-1. Create a database named `blog`.
-2. Create a collection called 'articles'.
+1. Create a database named `blog`. //use blog
+2. Create a collection called 'articles'. db.createCollection('articles')
 3. Insert multiple documents(at least 3) into articles. It should have fields
 
 - title as string
@@ -16,6 +16,39 @@ Write code to execute below expressions.
     - age
     - example author: {name: 'abc', email: 'abc@gmail', age: 25}
 - tags : Array of strings like ['html', 'css']
+
+db.articles.insertMany( [
+{
+title: 'All Pretty Pandas',
+details: 'Health Blog',
+author: {
+name: 'Sharleen Joynt',
+email: 'sharleen@alltheprettypandas.com',
+age: '35',
+},
+tags: ['js', 'mongo'],
+},
+{
+title: 'Blatherings',
+details: 'Art Blog',
+author: {
+name: 'Debbie Radpith',
+email: 'debbieBlathering@gmail.com',
+age: '41',
+},
+tags: ['js', 'mongo'],
+},
+{
+title: 'Buzz,Balls and Hype',
+details: 'Fiction Blog',
+author: {
+name: 'M.J Rose',
+email: 'rose@gmail.com',
+age: '62',
+},
+tags: ['js', 'mongo'],
+},
+])
 
 ```js
 // An article should look like in the database
@@ -32,13 +65,23 @@ Write code to execute below expressions.
 }
 ```
 
-4. Find all the articles using `db.COLLECTION_NAME.find()`
+4. Find all the articles using `db.COLLECTION_NAME.find()` //db.articles.find().pretty()
 5. Find a document using \_id field.
+
+db.articles.find({"\_id" : ObjectId("6391d805e4809cc876133c3c")})
+
 6. 1. Find documents using title
+
+db.articles.find({"title" : "Blatherings"})
+
 7. 2. Find documents using author's name field.
+
+db.articles.find({"name" : "M.J Rose"})
+
 8. Find document using a specific tag.
 
 9. Update title of a document using its \_id field.
+
 10. Update a author's name using article's title.
 11. rename details field to description from all articles in articles collection.
 12. Add additional tag in a specific document.
@@ -57,110 +100,110 @@ Write code to execute below expressions.
 db.users.insertMany([
   {
     age: 49,
-    name: "Maurice Brock",
-    email: "wuk@hibpiz.ch",
-    gender: "Female",
-    sports: ["cricket", "football"],
+    name: 'Maurice Brock',
+    email: 'wuk@hibpiz.ch',
+    gender: 'Female',
+    sports: ['cricket', 'football'],
     scores: [24, 35, 18, 16],
     weight: 45,
   },
   {
     age: 37,
-    birthday: "7/15/1986",
-    name: "Virgie Cunningham",
-    email: "ezogafa@de.gm",
-    gender: "Male",
-    sports: ["football"],
+    birthday: '7/15/1986',
+    name: 'Virgie Cunningham',
+    email: 'ezogafa@de.gm',
+    gender: 'Male',
+    sports: ['football'],
     scores: [17, 35, 43],
     weight: 52,
   },
   {
     age: 48,
-    birthday: "5/14/1961",
-    name: "Alexander Holt",
-    email: "han@mu.pe",
-    gender: "Male",
-    sports: ["cricket", "football", "TT"],
+    birthday: '5/14/1961',
+    name: 'Alexander Holt',
+    email: 'han@mu.pe',
+    gender: 'Male',
+    sports: ['cricket', 'football', 'TT'],
     scores: [24, 30, 16],
     weight: 55,
   },
   {
     age: 53,
-    birthday: "11/15/1963",
-    name: "Derek Dawson",
-    email: "polril@now.de",
-    gender: "Male",
-    sports: ["cricket", "hockey"],
+    birthday: '11/15/1963',
+    name: 'Derek Dawson',
+    email: 'polril@now.de',
+    gender: 'Male',
+    sports: ['cricket', 'hockey'],
     scores: [20, 15, 38, 23],
     weight: 49,
   },
   {
     age: 34,
-    birthday: "7/24/1964",
-    name: "Cynthia Cobb",
-    email: "wujjarpob@jecimpar.gu",
-    gender: "Female",
-    sports: ["cricket"],
+    birthday: '7/24/1964',
+    name: 'Cynthia Cobb',
+    email: 'wujjarpob@jecimpar.gu',
+    gender: 'Female',
+    sports: ['cricket'],
     scores: [41, 17, 28],
     weight: 51,
   },
   {
     age: 33,
-    birthday: "10/26/1982",
-    name: "Isabella Atkins",
-    email: "ononuzas@givhoz.ca",
-    gender: "Female",
-    sports: ["cricket", "football", "hockey", "TT"],
+    birthday: '10/26/1982',
+    name: 'Isabella Atkins',
+    email: 'ononuzas@givhoz.ca',
+    gender: 'Female',
+    sports: ['cricket', 'football', 'hockey', 'TT'],
     scores: [14, 38, 29, 45, 20],
     weight: 49,
   },
   {
     age: 47,
-    birthday: "10/12/1978",
-    name: "Katharine Bryan",
-    email: "zo@pebi.sa",
-    gender: "Male",
-    sports: ["TT", "hockey", "khokho"],
+    birthday: '10/12/1978',
+    name: 'Katharine Bryan',
+    email: 'zo@pebi.sa',
+    gender: 'Male',
+    sports: ['TT', 'hockey', 'khokho'],
     scores: [27, 20, 34],
     weight: 58,
   },
   {
     age: 41,
-    birthday: "1/28/1991",
-    name: "Beatrice Fleming",
-    email: "ufufsa@pujizren.tk",
-    gender: "Female",
-    sports: ["football", "khokho"],
+    birthday: '1/28/1991',
+    name: 'Beatrice Fleming',
+    email: 'ufufsa@pujizren.tk',
+    gender: 'Female',
+    sports: ['football', 'khokho'],
     scores: [30, 20, 15, 29, 43],
     weight: 47,
   },
   {
     age: 26,
-    birthday: "3/23/1998",
-    name: "Tom Fields",
-    email: "wasodjow@ofaba.gf",
-    gender: "Female",
-    sports: ["khokho"],
+    birthday: '3/23/1998',
+    name: 'Tom Fields',
+    email: 'wasodjow@ofaba.gf',
+    gender: 'Female',
+    sports: ['khokho'],
     scores: [37, 29, 18, 43, 49],
     weight: 50,
   },
   {
     age: 33,
-    birthday: "11/14/1960",
-    name: "Steve Ortega",
-    email: "dupus@ca.ls",
-    gender: "Female",
-    sports: ["cricket", "football", "hockey"],
+    birthday: '11/14/1960',
+    name: 'Steve Ortega',
+    email: 'dupus@ca.ls',
+    gender: 'Female',
+    sports: ['cricket', 'football', 'hockey'],
     scores: [12, 15, 20],
     weight: 51,
   },
   {
     age: 24,
-    birthday: "1/5/1994",
-    name: "Suraj Kumar",
+    birthday: '1/5/1994',
+    name: 'Suraj Kumar',
     weight: 50,
-    gender: "Male",
-    sports: ["football", "cricket", "TT"],
+    gender: 'Male',
+    sports: ['football', 'cricket', 'TT'],
   },
 ]);
 ```
